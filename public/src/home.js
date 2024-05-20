@@ -7,7 +7,10 @@ function getTotalAccountsCount(accounts) {
 }
 
 function getBooksBorrowedCount(books) {
-  return books.filter(book => book.borrows.some(borrow => borrow.returned === false)).length ;
+ //  return books.filter(book => book.borrows.some(borrow => borrow.returned === false)).length ;
+ //  use const 
+  const borrowedBooks = books.filter((book) => book.borrows[0].returned === false);
+  return borrowedBooks.length;
 }
 
 
